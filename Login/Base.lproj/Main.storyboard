@@ -25,12 +25,12 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcW-0v-9nV">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwW-M6-NXF">
                                                 <rect key="frame" x="0.0" y="41" width="334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRV-sA-vlK">
                                                 <rect key="frame" x="0.0" y="82" width="334" height="34.5"/>
@@ -80,7 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordNameTextField" destination="EwW-M6-NXF" id="ubj-qY-LMJ"/>
+                        <outlet property="passwordTextField" destination="EwW-M6-NXF" id="ngr-V8-JXG"/>
                         <outlet property="userNameTextField" destination="fcW-0v-9nV" id="1kl-Sy-Jhf"/>
                         <segue destination="JZ4-Wg-Kdl" kind="presentation" identifier="openWelcomeVC" modalPresentationStyle="fullScreen" id="LkD-bF-8sJ"/>
                     </connections>
@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="135" y="4.225352112676056"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="JUz-1S-Ws6">
             <objects>
-                <viewController id="JZ4-Wg-Kdl" sceneMemberID="viewController">
+                <viewController id="JZ4-Wg-Kdl" customClass="WelcomeViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BC8-HB-WHV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,6 +121,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="unwindSegue:" destination="z0L-1E-13w" eventType="touchUpInside" id="ceM-su-6DK"/>
+                                    <segue destination="z0L-1E-13w" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="O1c-M5-jHk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,6 +136,9 @@
                             <constraint firstItem="yd8-7w-eV6" firstAttribute="centerX" secondItem="BC8-HB-WHV" secondAttribute="centerX" id="oR9-oz-Dsb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="yd8-7w-eV6" id="Xvv-qU-Ofy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngn-Su-MR5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="z0L-1E-13w" userLabel="Exit" sceneMemberID="exit"/>
